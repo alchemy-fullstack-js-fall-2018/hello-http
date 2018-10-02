@@ -1,9 +1,9 @@
-const app = require('app');
+const app = require('./lib/app');
 const http = require('http');
 
 const server = http.createServer(app);
 
-const PORT = 666;
+const PORT = 9999;
 
 server.listen(PORT, () => {     /*eslint-disable-next-line no-console*/    
     console.log('Server running on ', server.address().port);
