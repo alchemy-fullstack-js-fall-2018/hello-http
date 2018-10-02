@@ -1,6 +1,6 @@
 /* eslint no-console: off */
 
-const app = require('app');
+const app = require('./lib/app');
 const http = require('http');
 
 // curl 'http://localhost:7890/hi' -d '{ "name": "ryan" }'
