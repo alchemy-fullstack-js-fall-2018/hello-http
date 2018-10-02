@@ -10,6 +10,7 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
+    "jest": "jest",
     "test:run": "jest",
     "test": "npm run test:run",
     "test:watch": "npm run jest -- --watch",
