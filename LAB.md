@@ -4,7 +4,6 @@ Hello HTTP
 Use the Node.js `http` module to create an end-to-end (E2E) tested http server. 
 
 ## Directions
-
 Your server should:
 
 1. Respond with a greeting if the method is `GET` and url (path) is `/happy-birthday/<name>`
