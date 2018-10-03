@@ -1,7 +1,8 @@
 const request = require('supertest');
 const app = require('../lib/app');
+const assert = require('assert');
 
-describe('simple http server', () => {
+describe('happy birthday', () => {
     it('responds with happy birthday', () => {
         const expected = '<html><body><p>Happy Birthday <strong>Elmo!</strong></p></body></html>';
         return request(app).get('/happy-birthday/Elmo').then(res => {
@@ -22,11 +23,30 @@ describe('simple http server', () => {
             expect(res.text).toEqual(expected);
         });
     });
+});
 
-    it.skip('responds with hi there when path is /hello', () => {
-        return request(app).get('/hello')
-            .then(res => {
-                expect(res.text).toEqual('hi there');
-            });
+describe('facts', () => {
+    it('responds with a random fact', () => {
+        return request(app).get('/fact').then(res => {
+            expect(res.text).toEqual(expect.stringContaining('http'));
+        });
+    });
+});
+
+describe('error messages', () => {
+    it('responds with error if request is not GET', () => {
+        const path = '/bad-request';
+        const expected = `CANNOT POST ${path}`;
+        return request(app).post(path).then(res => {
+            expect(res.text).toEqual(expected);
+        });
+    });
+
+    it('responds with error if GET request is unexpected', () => {
+        const path = '/bad-request';
+        const expected = `CANNOT GET ${path}`;
+        return request(app).get(path).then(res => {
+            expect(res.text).toEqual(expected);
+        });
     });
 });
