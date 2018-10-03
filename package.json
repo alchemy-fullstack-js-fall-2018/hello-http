@@ -8,7 +8,8 @@
     "pretest": "npm run lint",
     "test:run": "jest",
     "test": "npm run test:run",
-    "start": "npm run test:run -- --watch"
+    "test:watch": "npm run test:run -- --watch",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
