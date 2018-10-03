@@ -13,7 +13,7 @@ Your server should:
       <html><body><p>Happy Birthday <strong>Jane!</strong></p></body></html>
       ```
   * Content Type should be set to `text/html`
-  * If query string specifies a `custom` value, like `/happy-birthday/Jane&custom=You%20Rock`, add that
+  * If query string specifies a `custom` value, like `/happy-birthday/Jane?custom=You%20Rock`, add that
   to the response: 
       ```html
       <html><body><p>Happy Birthday <strong>Jane!</strong> You Rock</p></body></html>
@@ -34,15 +34,6 @@ this will make it easier to test the fact.)
 and include the text: `CANNOT <METHOD> <path>`
 
 **IMPORTANT**: Add a `README.md` that describes how to use your API 
-
-### Architecture and Design
-
-1. Define the listening function for your server in `lib/app.js`, but export it and create the server and listen 
-in a `server.js` file at the root of your project. You will import (`require`) this same function into your E2E test
-and use `request(app)` to start the server
-* Use 'extract' function to not have all of your code live in the listening function. You should be able to do this
-for 1) birthday greeting, 2) interesting fact, 3) other BONUS methods. TDD these synchronous functions first before 
-exposing via the server.
 
 ## Testing
 
