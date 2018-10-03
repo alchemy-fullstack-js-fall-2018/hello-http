@@ -35,5 +35,12 @@ describe('simple http server', () => {
                 expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Buddy!</strong> Lookin Good!</p></body></html>');
             });
     });
+
+    it('responds with an http fact if "fact" is recieve', () => {
+        return request(app).get('/fact')
+            .then(res => {
+                expect(res.text).toMatch(/http/);
+            });
+    });
 });
 
