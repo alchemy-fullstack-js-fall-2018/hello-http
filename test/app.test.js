@@ -28,10 +28,14 @@ describe('simple http server', () => {
                 expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Mack!</strong> Hi</p></body></html>');
             });
     });
-    it('gives random http fact', () => {
+    it.skip('gives random http fact', () => {
         return request(app).get('/fact')
             .then(res => {
                 expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Mack!</strong> Hi</p></body></html>');
             });
     });
+
+    //TODO: 
+    //Generate Random Http Facts and test that they come through as JSON
+    //Return 404 Not Found Test and Functionality.
 });
