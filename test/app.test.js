@@ -13,8 +13,12 @@ describe('hello http server', () => {
             expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>GI-Joe!</strong></p></body></html>');
         });
     });
+    it('Respond with Stranger if GET and url /happy-birthday/', () => {
+        return request(app).get('/happy-birthday/').then(res => {
+            expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Stranger!</strong></p></body></html>');
+        });
+    });
     it('Adds custom greeting if provided in query string', () => {
-
         return request(app).get('/happy-birthday/GI-Joe?custom=Go%20Joe').then(res => {
             expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>GI-Joe!</strong> Go Joe</p></body></html>');
         });
