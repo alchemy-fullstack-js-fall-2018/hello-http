@@ -27,7 +27,7 @@ describe('happy birthday', () => {
 describe('facts', () => {
     it('responds with a random fact', () => {
         return request(app).get('/fact').then(res => {
-            expect(res.text).toEqual(expect.stringContaining('http'));
+            expect(res.text).toEqual(expect.stringContaining('HTTP'));
         });
     });
 });
