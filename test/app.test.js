@@ -35,6 +35,15 @@ describe('simple http server', () => {
             });
     });
 
+    it('responds with 404 to not found', () => {
+        return request(app).get('/yabadabadoo')
+            .then(res => {
+                expect(res.status).toEqual(404);
+                expect(res.text).toMatch(/CANNOT/);
+
+            });
+    });
+
     //TODO: 
     //Generate Random Http Facts and test that they come through as JSON
     //Return 404 Not Found Test and Functionality.
