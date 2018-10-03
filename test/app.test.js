@@ -31,7 +31,7 @@ describe('simple http server', () => {
     it('gives a separate response if GET request does not start with /happy-birthday/', () => {
         return request(app).get('/happy-anniversary')
             .then(res => {
-                expect(res.text).toEqual('Sorry, we only celebrate birthdays here...sad panda ;(');
+                expect(res.text).toEqual('Sorry, we only celebrate birthdays and facts here...sad panda ;(');
             });
     });
 
@@ -42,6 +42,18 @@ describe('simple http server', () => {
                     '<html><body><p>Happy Birthday <strong>Jane!</strong> You Rock</p></body></html>'
                 );
             });
+    });
+
+    describe('facts', () => {
+
+        it('returns a random fact when url begins with "/fact"', () => {
+            return request(app).get('/fact')
+                .then(res => {
+                    expect(res.text).toEqual('apple' || 'orange' || 'banana');
+                });
+        });
+
+
     });
 
 });
