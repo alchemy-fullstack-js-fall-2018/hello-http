@@ -31,7 +31,7 @@ describe('simple http server', () => {
     it('gives random http fact', () => {
         return request(app).get('/fact')
             .then(res => {
-                expect(res.text).toMatch(/http/);
+                expect(res.text).toContain('http');
             });
     });
 
