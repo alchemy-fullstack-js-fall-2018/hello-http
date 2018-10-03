@@ -3,12 +3,6 @@ const app = require('../lib/app');
 
 describe('app request', () => {
 
-    // it('says happy birthday', () => {
-    //     return request(app).get('/happy-birthday')
-    //         .then(response => {
-    //             expect(response.text).toEqual('<html><body><p>Happy Birthday <strong></strong> </p></body></html>');
-    //         });
-    // });
     it('says happy birthday with stranger if no name is provided', () => {
         return request(app).get('/happy-birthday/stranger')
             .then(response => {
@@ -33,8 +27,10 @@ describe('app request', () => {
     it('provides interesting facts', () => {
         return request(app).get('/facts')
             .then(response => {
-                expect(response.text).toEqual('<html><body><p></p></body></html>')
+                expect(response.text).toContain('HTTP');
             });
     });    
 
 });
+
+
