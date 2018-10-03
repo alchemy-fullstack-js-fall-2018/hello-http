@@ -30,4 +30,11 @@ describe('app request', () => {
             });
     });
 
+    it('provides interesting facts', () => {
+        return request(app).get('/facts')
+            .then(response => {
+                expect(response.text).toEqual('<html><body><p></p></body></html>')
+            });
+    });    
+
 });
