@@ -25,7 +25,7 @@ describe('my http server', () => {
     it('will add custom text to happy birthday from query string', () => {
         return request(app).get('/happy-birthday/Al?custom=You Rock')
             .then(res => {
-                expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Al!</strong> You Rock</p></body></html>');
+                expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Al!</strong>You Rock</p></body></html>');
             });
     });
 
@@ -33,7 +33,7 @@ describe('my http server', () => {
         return request(app).get('/fact')
             .then(res => {
                 expect(res.text).toContain('HTTP');
-                // assert.ok(/http/.test(res));
+                // expect(/http/i.test(res)).toBeTruthy();
             });
     });
 });
