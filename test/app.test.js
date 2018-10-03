@@ -6,7 +6,7 @@ describe('simple http server', () => {
     it('only accepts GET requests', () => {
         return request(app).post('/happy-birthday/John')
             .then(res => {
-                expect(res.text).toEqual('Sorry, we only accept GET requests :(');
+                expect(res.text).toEqual('404 Not Found. Cannot POST /happy-birthday/John');
             });
     });
 
@@ -49,7 +49,7 @@ describe('simple http server', () => {
         it('returns a random fact when url begins with "/fact"', () => {
             return request(app).get('/fact')
                 .then(res => {
-                    expect(res.text).toEqual('apple' || 'orange' || 'banana');
+                    expect(res.text).toContain('HTTP');
                 });
         });
 
