@@ -1,10 +1,10 @@
 /* eslint no-console: off */
 
-const app = require('app');
+const app = require('./lib/app');
 const http = require('http');
 
 //keeping this momentarily till the weekend for refrence
-// curl 'http://localhost:7890/hi' -d '{ "name": "ryan" }'
+// curl '' -d '{ "name": "ryan" }'
 const server = http.createServer(app);
 
 const PORT = 7890;
