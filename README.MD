@@ -4,13 +4,11 @@
 
 #### By _**{David Chhing}**_
 
-
 ## Setup/Installation Requirements
 
 * _Installed node package, jest, supertest, lint_
+* _set up server file, app file, test file_
 
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 
 ## Known Bugs
 
@@ -26,6 +24,6 @@ _{Tell me about the languages and tools you used to create this app. Assume that
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*-WTFPL*
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2018 **_{David Chhing}_**
