@@ -1,4 +1,3 @@
-const assert = require('assert');
 const sayHappyBirthday = require('../lib/happy-birthday');
 
 describe('my birthday helper function', () => {
