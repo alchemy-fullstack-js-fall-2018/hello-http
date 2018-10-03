@@ -18,7 +18,7 @@ describe('my http server', () => {
     it('responds Happy Birthday Al when path is /happy-birthday/Al', () => {
         return request(app).get('/happy-birthday/Al')
             .then(res => {
-                expect(res.text).toEqual('Happy Birthday Al');
+                expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Al!</strong></p></body></html>');
             });
     })
 });
