@@ -28,4 +28,12 @@ describe('my http server', () => {
                 expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Al!</strong> You Rock</p></body></html>');
             });
     });
+
+    it('will give a fact about http when given the path /fact', () => {
+        return request(app).get('/fact')
+            .then(res => {
+                expect(res.text).toContain('HTTP');
+                // assert.ok(/http/.test(res));
+            });
+    });
 });
