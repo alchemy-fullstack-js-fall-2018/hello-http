@@ -28,10 +28,10 @@ describe('simple http server', () => {
                 expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Mack!</strong> Hi</p></body></html>');
             });
     });
-    it.skip('gives random http fact', () => {
+    it('gives random http fact', () => {
         return request(app).get('/fact')
             .then(res => {
-                expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Mack!</strong> Hi</p></body></html>');
+                expect(res.text).toMatch(/http/);
             });
     });
 
