@@ -1,6 +1,5 @@
 const request = require('supertest');
 const app = require('../lib/app');
-const assert = require('assert');
 
 describe('happy birthday', () => {
     it('responds with happy birthday', () => {
