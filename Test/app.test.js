@@ -26,6 +26,12 @@ describe('simple http server', () => {
             expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Jane!</strong>You Rock</p></body></html>');
         });
     });
+
+    it('responds with one of three random facts', () => {
+        return request(app).get('/fact').then(res => {
+            expect(/http/.test(res.text)).toBeTruthy();
+        });
+    });
 });
 
 
