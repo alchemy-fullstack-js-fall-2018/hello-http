@@ -15,10 +15,10 @@ describe('my http server', () => {
             });
     });
 
-    it('responds Happy Birthday Al when path is /happy-birthday/Al', () => {
+    it('responds Happy Birthday <name>! when path is /happy-birthday/<name>', () => {
         return request(app).get('/happy-birthday/Al')
             .then(res => {
                 expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Al!</strong></p></body></html>');
             });
-    })
+    });
 });
