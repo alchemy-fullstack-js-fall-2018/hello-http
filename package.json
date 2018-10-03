@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "jest",
     "test:watch": "jest --watch",
     "start": "node server.js"
   },
@@ -20,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/sophiegraham/hello-http/issues"
   },
-  "homepage": "https://github.com/sophiegraham/hello-http#readme"
+  "homepage": "https://github.com/sophiegraham/hello-http#readme",
+  "dependencies": {
+    "jest": "^23.6.0"
+  }
 }
