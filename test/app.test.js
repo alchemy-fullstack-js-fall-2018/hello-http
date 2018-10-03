@@ -3,16 +3,25 @@ const app = require('../lib/app');
 
 describe('app request', () => {
 
-    it('says happy birthday', () => {
+    // it('says happy birthday', () => {
+    //     return request(app).get('/happy-birthday')
+    //         .then(response => {
+    //             expect(response.text).toEqual('<html><body><p>Happy Birthday <strong></strong> </p></body></html>');
+    //         });
+    // });
+    it('says happy birthday with stranger if no name is provided', () => {
+        return request(app).get('/happy-birthday/stranger')
+            .then(response => {
+                expect(response.text).toEqual('<html><body><p>Happy Birthday <strong>stranger!</strong> </p></body></html>');
+            });
+    });
+
+    it('says happy birthday with name', () => {
         return request(app).get('/happy-birthday/mikey')
             .then(response => {
                 expect(response.text).toEqual('<html><body><p>Happy Birthday <strong>mikey!</strong> </p></body></html>');
             });
     });
-
-    // it('says stranger if no name is provided', () => {
-    //     return request(app).get
-    // });
 
     it('says their input', () => {
         return request(app).get('/happy-birthday/mikey?custom=your fabulous')
