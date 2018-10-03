@@ -3,7 +3,7 @@
 const app = require('./lib/app');
 const http = require('http');
 
-const server = http.createServer(app);
+const server = http.createServer(app); //extracts what is in app
 
 const PORT = 7890;
 
