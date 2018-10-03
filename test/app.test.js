@@ -9,4 +9,11 @@ describe('simple http server', () => {
                 expect(res.text).toEqual('hello there');
             });
     });
+
+    it('responds Happy Birthday Mack', () => {
+        return request(app).get('/happy-birthday/Mack')
+            .then(res => {
+                expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Mack!</strong></p></body></html>');
+            });
+    });
 });
