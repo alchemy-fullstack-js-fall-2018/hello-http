@@ -12,9 +12,6 @@ describe('bodyParser', () => {
                 expect(body).toEqual({ name: 'test' });
             });
 
-        // emit after initializing body parser.
-        // body parser needs to subscribe to
-        // the events first.
         req.emit('data', JSON.stringify({
             name: 'test',
         }));
@@ -37,9 +34,6 @@ describe('bodyParser', () => {
                 expect(err).toBeTruthy();
             });
 
-        // emit after initializing body parser.
-        // body parser needs to subscribe to
-        // the events first.
         req.emit('data', '<html></html>');
 
         req.emit('end');
