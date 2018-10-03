@@ -25,9 +25,9 @@ describe('app request', () => {
     });
 
     it('provides interesting facts', () => {
-        return request(app).get('/facts')
+        return request(app).get('/fact')
             .then(response => {
-                expect(response.text).toContain('HTTP');
+                expect(response.text).toContain('http');
             });
     });    
 
