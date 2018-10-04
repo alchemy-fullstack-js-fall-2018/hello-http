@@ -20,4 +20,25 @@ describe('bodyParser', () => {
 
         return promise;
     });
+
+    it('fails gracefully if not json', () => {
+        let req = new EventEmitter();
+        req.header = {};
+        req.header['content-type'] = 'text/html';
+
+        const promise = bodyParser(req)
+            .then(() => {
+                expect(false);
+            })
+            .catch(err => {
+                expect(err).toBeTruthy();
+            });
+
+        req.emit('data', '<html></html>');
+
+        req.emit('end');
+
+        return promise;
+
+    });
 });
