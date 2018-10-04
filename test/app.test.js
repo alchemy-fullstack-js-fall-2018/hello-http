@@ -29,7 +29,7 @@ describe('simple http server', () => {
 
     it('responds with a random fact about http', () => {
         return request(app).get('/fact').then(res => {
-            expect(res.text).stringContaining('HTTP');
+            expect(res.text).toEqual(expect.stringMatching(/HTTP/));
         });
     });
 
