@@ -21,4 +21,10 @@ describe('simple http server', () => {
         });
     });
 
+    it('responds with a birthday + stranger greeting if no name is provided', () => {
+        return request(app).get('/happy-birthday').then(res => {
+            expect(res.text).toEqual('<html><body><p>Happy Birthday <strong>Stranger!</strong></p></body></html>');
+        });
+    });
+
 });
