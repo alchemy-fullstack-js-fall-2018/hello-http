@@ -15,5 +15,11 @@ describe('simple http server', () => {
         });
     });
 
+    it('responds with an added custom message', () => {
+        return request(app).get('/happy-birthday/universe?custom=You%20Rock').then(res => {
+            expect(res.test).toEqual('<html><body><p>Happy Birthday <strong>universe!</strong> You Rock</p></body></html>');
+        });
+    });
+
 
 });
