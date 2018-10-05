@@ -4,7 +4,7 @@ const app = require('../lib/app');
 describe('app request', () => {
 
     it('says happy birthday with stranger if no name is provided', () => {
-        return request(app).get('/happy-birthday/stranger')
+        return request(app).get('/happy-birthday')
             .then(response => {
                 expect(response.text).toEqual('<html><body><p>Happy Birthday <strong>stranger!</strong> </p></body></html>');
             });
