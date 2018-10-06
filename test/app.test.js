@@ -16,7 +16,7 @@ describe('simple http server', () => {
             return request(app).get('/happy-birthday/John')
                 .then(res => {
                     expect(res.text).toEqual(
-                        '<html><body><p>Happy Birthday <strong>John!</strong></p></body></html>'
+                        '<html><body><p>Happy Birthday <strong>John!</strong> </p></body></html>'
                     );
                 });
         });
@@ -25,7 +25,7 @@ describe('simple http server', () => {
             return request(app).get('/happy-birthday/')
                 .then(res => {
                     expect(res.text).toEqual(
-                        '<html><body><p>Happy Birthday <strong>Stranger!</strong></p></body></html>'
+                        '<html><body><p>Happy Birthday <strong>Stranger!</strong> </p></body></html>'
                     );
                 });
         });
