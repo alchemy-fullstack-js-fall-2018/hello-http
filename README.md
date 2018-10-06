@@ -12,3 +12,5 @@ two pages:
 * message board
 * fact page
 
+make sure to document the API
+
