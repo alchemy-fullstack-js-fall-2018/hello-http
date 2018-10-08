@@ -38,7 +38,7 @@ describe('simple http server', () => {
         });
     
         it('adds custom response for query strings', () => {
-            return request(app).get('/happy-birthday/Jane&custom=You%20Rock')
+            return request(app).get('/happy-birthday/Jane?custom=You%20Rock')
                 .then(res => {
                     expect(res.text).toEqual(
                         '<html><body><p>Happy Birthday <strong>Jane!</strong> You Rock</p></body></html>'
