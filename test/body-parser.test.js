@@ -9,7 +9,7 @@ describe('bodyParser', () => {
         req.header['content-type'] = 'application/json';
 
         const promise = bodyParser(req)
-            .then(body => expect(body).toEqual({ name: 'test'}));
+            .then(body => expect(body).toEqual({ name: 'test' }));
 
         req.emit('data', JSON.stringify({ name: 'test' }));
         req.emit('end');
@@ -27,7 +27,7 @@ describe('bodyParser', () => {
             .then(() => expect(false))
             .catch(err => expect(err).toBeTruthy());
 
-        req.emit('data', '<html></html>')
+        req.emit('data', '<html></html>');
         req.emit('end');
 
         return promise;
